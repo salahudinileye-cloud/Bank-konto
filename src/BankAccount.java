@@ -15,7 +15,7 @@ public class BankAccount {
                 throw new IllegalArgumentException("Beløb må ikke være negativt.");
 
         }
-        balance -= amount;
+        setBalance(balance - amount);
 
     }
     public double getBalance() {
