@@ -8,7 +8,14 @@ public class BankAccount {
         setBalance(balance + amount);
     }
     public void withdraw(double amount) {
-        setBalance(balance - amount);
+        if (amount > balance) {
+            throw new IllegalArgumentException("Amount is greater than balance");
+        }
+            if (amount < 0) {
+                throw new IllegalArgumentException("Beløb må ikke være negativt.");
+
+        }
+        balance -= amount;
 
     }
     public double getBalance() {
@@ -16,8 +23,9 @@ public class BankAccount {
     }
     private void setBalance(double amount) {
         if (amount > 0) {
-           throw new IllegalArgumentException("Balance cannot be negative");
+            throw new IllegalArgumentException("Balance cannot be negative");
+
         }
-        balance = amount;
+      this.balance = balance;
     }
 }
